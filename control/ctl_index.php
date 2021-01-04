@@ -2,7 +2,7 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:37:35
- * @LastEditTime: 2021-01-04 11:56:55
+ * @LastEditTime: 2021-01-04 15:05:53
  * @LastEditors: Please set LastEditors
  * @Description: index
  * @FilePath: \php-demo-group\control\ctl_index.php
@@ -18,10 +18,10 @@ class ctl_index extends controller
         
     }
 
-	public function index()
-	{
+    public function index()
+    {
         $data = [];
-        response(200, $data, '');
+        response(200, $data);
     }
 
     public function test()

@@ -2,7 +2,7 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:17:20
- * @LastEditTime: 2020-12-30 14:31:39
+ * @LastEditTime: 2021-01-04 17:15:59
  * @LastEditors: Please set LastEditors
  * @Description: 框架核心入口文件
  * @FilePath: \php-demo-group\core\init.php
@@ -17,6 +17,7 @@ require CORE.'/../configs/app.php';
 require CORE.'/../configs/database.php';
 require CORE.'/../configs/code.php';
 require CORE.'/../configs/routes.php';
+require CORE.'/../configs/sdk.php';
 
 
 // 加载核心类库
@@ -27,6 +28,8 @@ require CORE.'/roles.php';
 // 加载组件类库
 require CORE.'/../utils/database/db.php';
 require CORE.'/../utils/common/common.php';
+require CORE.'/../utils/sms/alisms.php';
+require CORE.'/../utils/mail/mail.php';
 
 // 加载模型类
 require CORE.'/../model/mod_user.php';

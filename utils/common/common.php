@@ -2,7 +2,7 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:24:52
- * @LastEditTime: 2020-12-29 11:25:23
+ * @LastEditTime: 2021-01-04 15:44:30
  * @LastEditors: Please set LastEditors
  * @Description: 公共类
  * @FilePath: \php-demo-group\utils\common\common.php
@@ -17,7 +17,7 @@ const SHORTEN_STR = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 const SHORTEN_STR_LEN = 61;
 const ENCRYPT_AES_KEY = 'privacy-datainfo';
 
-class utils
+class common
 {
     /**
      * @description: 打印日志
@@ -66,7 +66,7 @@ class utils
         $key = md5(ENCRYPT_AES_KEY, true);
         $iv = md5($key.ENCRYPT_AES_KEY, true);
         $encrypted = openssl_encrypt($sinfo, "AES-128-CBC", $key, OPENSSL_RAW_DATA, $iv);
-        echo ENCRYPT_AES_KEY."\n";
+        log::error(ENCRYPT_AES_KEY."\n");
         return strtoupper(bin2hex($encrypted));
     }
     /**
@@ -96,7 +96,7 @@ class utils
      * @param {*} $headers
      * @return {*}
      */ 
-    public static function http_request($url, $data, $method = 'GET', $headers=[])
+    public static function http_request($url, $data = [], $method = 'GET', $headers=[])
     {
         //初始化
         $curl = curl_init();

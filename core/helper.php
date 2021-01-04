@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-30 14:22:01
- * @LastEditTime: 2020-12-30 14:29:25
+ * @LastEditTime: 2021-01-04 15:12:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \php-demo-group\core\helper.php
@@ -18,17 +18,13 @@ function get_state_hs($code)
     return $hs;
 }
 
-function response($code, $data, $fails_msg = '')
+function response($code, $data, $msg = '')
 {
     $response = [
         'code' => $code,
-        'data' => $data
+        'data' => $data,
+        'msg' => $msg
     ];
-
-    // 错误时返回错误信息
-    if (get_state_hs($code) != HS_SUCCESS) {
-        $response['fails_msg'] = $fails_msg;
-    }
 
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($response);

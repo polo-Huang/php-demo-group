@@ -2,7 +2,7 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:51:01
- * @LastEditTime: 2021-01-04 10:07:00
+ * @LastEditTime: 2021-01-04 15:23:28
  * @LastEditors: Please set LastEditors
  * @Description: 路由权限控制
  * @FilePath: \php-demo-group\configs\routes.php
@@ -10,7 +10,7 @@
 
 $GLOBALS['config']['routes'] = [
     'ctl' => [
-        'ctl_user' => ['login'],
+        // 'ctl_user' => ['login'],
     ],
     'func' => [
         // 'ctl_index/index' => ['login'],

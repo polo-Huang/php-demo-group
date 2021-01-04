@@ -2,7 +2,7 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:32:04
- * @LastEditTime: 2020-12-29 11:33:41
+ * @LastEditTime: 2021-01-04 15:13:11
  * @LastEditors: Please set LastEditors
  * @Description: 项目配置
  * @FilePath: \php-demo-group\configs\app.php
@@ -21,6 +21,7 @@ $GLOBALS = [];
 global $GLOBALS;
 
 // 项目频道: 用于单端口多项目时区分项目的前缀
-$GLOBALS['config']['channel'] = '/demo';
+// $GLOBALS['config']['channel'] = '/test';
+$GLOBALS['config']['channel'] = '';
 
 
