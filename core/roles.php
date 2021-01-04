@@ -2,16 +2,15 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:48:48
- * @LastEditTime: 2020-12-29 17:53:04
+ * @LastEditTime: 2020-12-30 14:29:16
  * @LastEditors: Please set LastEditors
  * @Description: 权限控制类
  * @FilePath: \php-demo-group\core\roles.php
  */
 
 if( !defined('CORE') ) exit('Request Error!');
-require CORE.'/../control/controller.php';
 
-class roles extends control
+class roles
 {
     public static function auth($ctl, $func)
     {
@@ -47,14 +46,14 @@ class roles extends control
             if ($forbidden) break;
         }
         if ($forbidden) {
-            self::abort(403);
+            abort(403);
         }
     }
 
     private static function login_role()
     {
         $has_role = true;
-        $openid = self::request('openid');
+        $openid = request('openid');
         $user = mod_user::user_for_openid($openid);
         if (!isset($user['id'])) {
             $has_role = false;

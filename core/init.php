@@ -2,7 +2,7 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:17:20
- * @LastEditTime: 2020-12-29 17:51:43
+ * @LastEditTime: 2020-12-30 14:31:39
  * @LastEditors: Please set LastEditors
  * @Description: 框架核心入口文件
  * @FilePath: \php-demo-group\core\init.php
@@ -15,9 +15,12 @@ define('CORE', dirname(__FILE__));
 // 系统配置
 require CORE.'/../configs/app.php';
 require CORE.'/../configs/database.php';
+require CORE.'/../configs/code.php';
 require CORE.'/../configs/routes.php';
 
+
 // 加载核心类库
+require CORE.'/helper.php';
 require CORE.'/log.php';
 require CORE.'/roles.php';
 
@@ -27,8 +30,6 @@ require CORE.'/../utils/common/common.php';
 
 // 加载模型类
 require CORE.'/../model/mod_user.php';
-
-require CORE.'/../control/controller.php';
 
 function into_controller()
 {
@@ -48,6 +49,7 @@ function into_controller()
         // 判断控制器文件是否存在，否throw错误信息
         if (file_exists($path_file)) {
             // 引入控制器文件
+            require CORE.'/../control/controller.php';
             require $path_file;
         } else {
             throw new Exception("Contrl {$ctl}--{$path_file} is not exists!");
@@ -62,12 +64,12 @@ function into_controller()
         } else {
             // throw new Exception("Method {$ctl}::{$func}() is not exists!");
             log::error("init.php run_controller() error: Method {$ctl}::{$func}() is not exists! url: {$_SERVER['REQUEST_URI']}");
-            utils::abort(404);
+            abort(404);
         }
     } catch (Exception $e) {
         // 捕获到错误时打印日志
         log::error("init.php run_controller() error: {$e->getMessage()} url: {$_SERVER['REQUEST_URI']}");
         // 中止程序并向客户端返回状态码
-        utils::abort(500);
+        abort(500);
     }
 }
