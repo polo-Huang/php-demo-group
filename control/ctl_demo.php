@@ -2,7 +2,7 @@
 /*
  * @Author: polo
  * @Date: 2020-12-29 11:37:35
- * @LastEditTime: 2021-01-04 17:16:18
+ * @LastEditTime: 2021-01-06 09:58:23
  * @LastEditors: Please set LastEditors
  * @Description: index
  * @FilePath: \php-demo-group\control\ctl_demo.php
@@ -73,7 +73,7 @@ class ctl_demo extends controller
         $result = null;
         $config = $GLOBALS['config']['mail'][$mode];
         $mail = new mail($config);
-        $result = $mail->send('polo_07@163.com','subject123',' <h1>33</h1> <a href="http://www.baidu.com"> baidu</a> <hr>');
+        $result = $mail->send($to, $title, $content);
         $data = [
             'result' => $result,
         ];

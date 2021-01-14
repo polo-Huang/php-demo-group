@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-04 15:26:08
- * @LastEditTime: 2021-01-04 15:44:43
+ * @LastEditTime: 2021-01-14 19:32:20
  * @LastEditors: Please set LastEditors
  * @Description: 阿里云sms
  * @FilePath: \php-demo-group\utils\sms\ali.php
@@ -14,9 +14,9 @@ if( !defined('CORE') ) exit('Request Error!');
 /**
  * @description: 公用常量
  */
-const ACCESSKEY_ID = "LTAInHTLLM1z6MDX";
-const ACCESS_SECRET = "LEIOMk12WtWMETc5U9ada16zp2QXBx";
-const SIGN_NAME = '"方块互娱"';
+const ACCESSKEY_ID = "xxxxxx";
+const ACCESS_SECRET = "xxxxxx";
+const SIGN_NAME = '"xxx"';
 
 class alisms
 {
